@@ -1,3 +1,7 @@
+github:
+  organization: belitradas
+  repository: jenkins-tests
+  credentials: credentials.github.account
 envVars:
   TEST_ENV: "test"
 credentials:
