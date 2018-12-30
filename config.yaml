@@ -5,7 +5,7 @@ github:
 envVars:
   TEST_ENV: "test"
 dynamicEnvVars:
-  DOCKER_TAG: jenkins-tests:${CHANGE_TARGET.replace("/", "_")}-${scmVars.GIT_COMMIT.take(7)}
+  DOCKER_TAG: jenkins-tests:${env.CHANGE_TARGET.replace("/", "_")}-${scmVars.GIT_COMMIT.take(7)}
 
 #credentials:
 #  - usernamePassword:
