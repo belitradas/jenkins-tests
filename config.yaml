@@ -4,11 +4,11 @@ github:
   credentials: credentials.github.account
 envVars:
   TEST_ENV: "test"
-credentials:
-  - usernamePassword:
-      credentialsId: "global.testing.id"
-      usernameVariable: "GLOBAL_TEST_USER"
-      passwordVariable: "GLOBAL_TEST_PASSWORD"
+#credentials:
+#  - usernamePassword:
+#      credentialsId: "global.testing.id"
+#      usernameVariable: "GLOBAL_TEST_USER"
+#      passwordVariable: "GLOBAL_TEST_PASSWORD"
 podTemplates:
   - name: "build"
     config:
@@ -56,12 +56,12 @@ groups:
           - echo "Hello $BLEH"
           - echo "Hello $MY_OWN_ENV_VAR"
           - echo "Hello $POD_VAR"
-          - 'echo "user: $TEST_USER, password: $TEST_PASSWORD"'
-          - 'echo "global user: $GLOBAL_TEST_USER, global password: $GLOBAL_TEST_PASSWORD"'
+#          - 'echo "user: $TEST_USER, password: $TEST_PASSWORD"'
+#          - 'echo "global user: $GLOBAL_TEST_USER, global password: $GLOBAL_TEST_PASSWORD"'
         envVars:
           BLEH: "bleh"
-        credentials:
-          - usernamePassword:
-              credentialsId: "testing.id"
-              usernameVariable: "TEST_USER"
-              passwordVariable: "TEST_PASSWORD"
+#        credentials:
+#          - usernamePassword:
+#              credentialsId: "testing.id"
+#              usernameVariable: "TEST_USER"
+#              passwordVariable: "TEST_PASSWORD"
