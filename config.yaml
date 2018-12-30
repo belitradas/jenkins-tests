@@ -4,6 +4,9 @@ github:
   credentials: credentials.github.account
 envVars:
   TEST_ENV: "test"
+dynamicEnvVars:
+  DOCKER_TAG: jenkins-tests:${CHANGE_TARGET.replace("/", "_")}-${scmVars.GIT_COMMIT.take(7)}
+
 #credentials:
 #  - usernamePassword:
 #      credentialsId: "global.testing.id"
@@ -56,6 +59,7 @@ groups:
           - echo "Hello $BLEH"
           - echo "Hello $MY_OWN_ENV_VAR"
           - echo "Hello $POD_VAR"
+          - 'echo "Docker tag: $DOCKER_TAG"'
 #          - 'echo "user: $TEST_USER, password: $TEST_PASSWORD"'
 #          - 'echo "global user: $GLOBAL_TEST_USER, global password: $GLOBAL_TEST_PASSWORD"'
         envVars:
