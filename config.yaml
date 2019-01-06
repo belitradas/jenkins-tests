@@ -73,6 +73,7 @@ groups:
 #              passwordVariable: "TEST_PASSWORD"
   - stages:
       - type: "HELM"
+        podTemplateName: "deploy"
         envName: "nonprod-01"
         envVars:
           ENV_NAME: nonprod01
