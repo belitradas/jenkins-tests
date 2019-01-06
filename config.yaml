@@ -10,6 +10,9 @@ envVars:
 #      usernameVariable: "GLOBAL_TEST_USER"
 #      passwordVariable: "GLOBAL_TEST_PASSWORD"
 podTemplates:
+  - name: "deploy"
+    config:
+      serviceAccount: "helm-client"
   - name: "build"
     config:
       serviceAccount: "helm-client"
@@ -72,16 +75,17 @@ groups:
       - type: "HELM"
         envName: "nonprod-01"
         envVars:
-          ENV_NAME: nonprod-01
+          ENV_NAME: nonprod01
         releaseName: blehbleh
         tillerNamespace: miguelsantiago
         deployCommand: "make helm-deploy"
         deleteCommand: "make helm-delete"
         rollbackCommand: "make helm-rollback"
         timeout:
-          value: 2
-          units: MINUTES
+          value: 30
+          units: SECONDS
         promoteMessage: "Promote build?"
         autoAcceptIfSuccessAndTimeout: false
-        abortAndNoRollbackIfTimeout: true
-        helmVersion: "v2.9.0"
+        abortAndNoRollbackIfTimeout: false
+        helmVersion: "v2.9.1"
+        installHelm: false
