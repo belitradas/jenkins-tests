@@ -51,21 +51,21 @@ podTemplates:
             containerPort: 3306
             hostPort: 3306
 groups:
-  - lock: "bleh"
-    podTemplateName: "build"
-    stages:
-      - name: "build"
-        commands:
-          - echo "Hello $BLEH"
-          - echo "Hello $MY_OWN_ENV_VAR"
-          - echo "Hello $POD_VAR"
-          - 'echo "Docker tag: $DOCKER_TAG"'
-          - 'echo "test env: $TEST_ENV"'
-          - 'echo "git short commit: $GIT_SHORT_COMMIT"'
+#  - lock: "bleh"
+#    podTemplateName: "build"
+#    stages:
+#      - name: "build"
+#        commands:
+#          - echo "Hello $BLEH"
+#          - echo "Hello $MY_OWN_ENV_VAR"
+#          - echo "Hello $POD_VAR"
+#          - 'echo "Docker tag: $DOCKER_TAG"'
+#          - 'echo "test env: $TEST_ENV"'
+#          - 'echo "git short commit: $GIT_SHORT_COMMIT"'
 #          - 'echo "user: $TEST_USER, password: $TEST_PASSWORD"'
 #          - 'echo "global user: $GLOBAL_TEST_USER, global password: $GLOBAL_TEST_PASSWORD"'
-        envVars:
-          BLEH: "bleh"
+#        envVars:
+#          BLEH: "bleh"
 #        credentials:
 #          - usernamePassword:
 #              credentialsId: "testing.id"
@@ -91,3 +91,4 @@ groups:
         helmVersion: "v2.9.1"
         runDependencies:
           - apk add --update --no-cache git
+          - ls -la
