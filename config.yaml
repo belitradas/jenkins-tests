@@ -83,8 +83,8 @@ groups:
         deleteCommand: "make helm-delete"
         rollbackCommand: "make helm-rollback"
         inputTimeout:
-          value: 30
-          units: SECONDS
+          value: 5
+#          units: SECONDS
         promoteMessage: "Promote build?"
         autoAcceptIfSuccessAndTimeout: false
         abortAndNoRollbackIfTimeout: false
