@@ -68,19 +68,19 @@ groups:
 #              credentialsId: "testing.id"
 #              usernameVariable: "TEST_USER"
 #              passwordVariable: "TEST_PASSWORD"
-#      - type: "HELM"
-#        envName: "deploy nonprod-01"
-#        envVars:
-#          ENV_NAME: nonprod-01
-#        releaseName: blehbleh
-#        tillerNamespace: miguelsantiago
-#        deployCommand: "make helm-deploy"
-#        deleteCommand: "make helm-delete"
-#        rollbackCommand: "make helm-rollback"
-#        timeout:
-#          value: 2
-#          units: MINUTES
-#        promoteMessage: "Promote build?"
-#        autoAcceptIfSuccessAndTimeout: false
-#        abortAndNoRollbackIfTimeout: true
-#        helmVersion: "v2.9.0"
+      - type: "HELM"
+        envName: "nonprod-01"
+        envVars:
+          ENV_NAME: nonprod-01
+        releaseName: blehbleh
+        tillerNamespace: miguelsantiago
+        deployCommand: "make helm-deploy"
+        deleteCommand: "make helm-delete"
+        rollbackCommand: "make helm-rollback"
+        timeout:
+          value: 2
+          units: MINUTES
+        promoteMessage: "Promote build?"
+        autoAcceptIfSuccessAndTimeout: false
+        abortAndNoRollbackIfTimeout: true
+        helmVersion: "v2.9.0"
