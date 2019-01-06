@@ -82,7 +82,7 @@ groups:
         deployCommand: "make helm-deploy"
         deleteCommand: "make helm-delete"
         rollbackCommand: "make helm-rollback"
-        timeout:
+        inputTimeout:
           value: 30
           units: SECONDS
         promoteMessage: "Promote build?"
