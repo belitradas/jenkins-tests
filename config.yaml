@@ -57,6 +57,8 @@ groups:
           - echo "Hello $MY_OWN_ENV_VAR"
           - echo "Hello $POD_VAR"
           - 'echo "Docker tag: $DOCKER_TAG"'
+          - 'echo "test env: $TEST_ENV"'
+          - 'echo "git short commit: $GIT_SHORT_COMMIT"'
 #          - 'echo "user: $TEST_USER, password: $TEST_PASSWORD"'
 #          - 'echo "global user: $GLOBAL_TEST_USER, global password: $GLOBAL_TEST_PASSWORD"'
         envVars:

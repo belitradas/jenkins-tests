@@ -1,0 +1,24 @@
+# Default values for demo.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 2
+
+image:
+  repository: belitre/mytests
+  tag: canary
+  pullPolicy: Always
+
+resources: 
+  limits:
+    cpu: 10m
+    memory: 50Mi
+  requests:
+    cpu: 10m
+    memory: 50Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
