@@ -68,6 +68,7 @@ groups:
 #              credentialsId: "testing.id"
 #              usernameVariable: "TEST_USER"
 #              passwordVariable: "TEST_PASSWORD"
+  - stages:
       - type: "HELM"
         envName: "nonprod-01"
         envVars:
