@@ -92,3 +92,4 @@ groups:
         runDependencies:
           - apk add --update --no-cache git
           - ls -la
+          - pwd
